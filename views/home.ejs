@@ -9,7 +9,7 @@
       <ul class="space-y-4">
         <% registeredHomes.forEach(home => { %>
           <li class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <span class="text-lg text-gray-800">House: <%= home.houseName %>  |  Price: <%= home.price %>  |  Rating: <%= home.rating %></span>
+            <span class="text-lg text-gray-800">House: <%= home.houseName %>  |  Price: <%= home.price %>  |  Rating: <%= home.rating %> | location <%=home.location %></span>
           </li>
         <% }) %>
         
