@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const rootDir = require('../utils/pathUtil');
 
-
+const registeredHomes =[];
 
 module.exports = class Home{
   constructor(houseName,price,location,rating,imageUrl){
@@ -17,7 +17,7 @@ module.exports = class Home{
 
 
   save(){
-    fetchAll(registeredHomes => {
+    Home.fetchAll(registeredHomes => {
     registeredHomes.push(this);
     const homeDataPath = path.join(rootDir,'data','homes.json');
     fs.writeFile(homeDataPath,JSON.stringify(registeredHomes),(error) =>{
