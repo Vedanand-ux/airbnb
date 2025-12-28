@@ -7,9 +7,9 @@
         Here are your favourite homes:
       </h2>
       <ul class="space-y-4">
-        <% registeredHomes.forEach(home => { %>
+        <% favouriteHomes.forEach(home => { %>
           <li class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex gap-4 items-center">
-
+  
   <img src="<%= home.imageUrl %>" 
        alt="Home Image" 
        class="w-32 h-32 object-cover rounded-lg border" />
@@ -20,12 +20,8 @@
 
     Rating: ⭐ <%= home.rating %> <br>
     Location: <%= home.location %>
-    <div><button class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">
-  Book
-</button>
-</div>
+    
   </div>
-  
 </li>
 
         <% }) %>

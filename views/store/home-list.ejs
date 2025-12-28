@@ -27,10 +27,9 @@
           Location: <%= home.location %>
           <div>
             <a class="bg-blue-400 text-black px-4 py-2 rounded hover:bg-blue-300 transition" href="/homes/<%=home.id %>">Details</a>
-            <button
-              class="bg-green-400 text-black px-4 py-2 rounded hover:bg-green-300 transition">
-              Book
-            </button>
+            <div class="mt-2">
+              <%- include('../partials/favourite',{home: home}) %>
+            </div>
           </div>
         </div>
       </li>

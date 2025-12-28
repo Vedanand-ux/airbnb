@@ -40,4 +40,11 @@ module.exports = class Home{
     });
   }
 
+  static fingById(homeId , callback){
+    this.fetchAll(home=>{
+      const homeFound = home.find(home => home.id === homeId);
+      callback(homeFound);
+    })
+  }
+
 } 
