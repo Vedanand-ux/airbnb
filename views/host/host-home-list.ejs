@@ -42,12 +42,13 @@
               >
                 Edit
             </a>
-
-              <button
+            <form action="/host/delete-home/<%=home.id%>" method="POST">
+              <button type="submit"
                 class="bg-red-400 text-black px-3 py-3 rounded hover:bg-red-300 transition"
               >
                 Delete
               </button>
+            </form>
             </div>
           </div>
         </li>

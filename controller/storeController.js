@@ -40,9 +40,30 @@ exports.getFavouriteList = (req, res, next) => {
     
 }
 
+exports.postAddToFaavouirte = (req,res,next)=>{
+    console.log("came to add to favourite", req.body);
+    Favourite.addToFavourite(req.body.id,error=>{
+      if(error){
+        console.log("error while marking fav",error);
+      }
+      res.redirect("/favourites")
+    })
+    
+}
+
+exports.postRomoveFromFaavouirte = (req,res,next)=>{
+  const homeId = req.params.homeId;
+  Favourite.deleteById(homeId,error => {
+    if(error){
+      console.log('erroe while removing from favourite',error);
+    }
+    res.redirect("/favourites")
+  }) 
+}
+
 exports.getHomeDetails = (req, res, next) => {
   const homeId = req.params.homeId;
-  Home.fingById(homeId, home=>{
+  Home.findById(homeId, home=>{
 
     if(!home){
       res.redirect("/homes");
@@ -60,13 +81,3 @@ exports.getHomeDetails = (req, res, next) => {
   
 }
 
-exports.postAddToFaavouirte = (req,res,next)=>{
-    console.log("came to add to favourite", req.body);
-    Favourite.addToFavourite(req.body.id,error=>{
-      if(error){
-        console.log("error while marking fav",error);
-      }
-      res.redirect("/favourites")
-    })
-    
-  }
